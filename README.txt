@@ -30,8 +30,8 @@ Optional parameters:
 default)
 -d distribution method (The default is 1).
 -o Output. The default is 0 (no output)
-1 : results are shown in two dimensional array (k2)
-2 : outputting all suffix prefix matches (not only the maximum).
+			  1 : results are shown in two dimensional array (k2)
+			  2 : outputting all suffix prefix matches (not only the maximum).
 -m Minimal match length. (The default is 1).
 -s Sorting (The default is 0 (no sorting)).
 
