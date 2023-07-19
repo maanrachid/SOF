@@ -19,13 +19,13 @@
 using namespace std;
 
 void displayhelp();
-void print_Sorted(uchar *a,uint *So);
+void print_Sorted(uchar *a,const uint * So);
 void print(uchar *a);
 bool isTerminator(uchar i);
 bool isTerminatorfile(uchar i);
 int choose_index(int a);
 void msd(uchar *a, int l, int r, int d, uint *So);
-void display_choices(char *filename, char *output, char* sorting,int threads,int min,int distribution_method);
+void display_choices(char *filename, const char *output, char* sorting,int threads,int min,int distribution_method);
 void encode(uchar *final,ulong counter,int bitnum,char c);
 ulong N;
 uint K;
@@ -160,7 +160,6 @@ void APSP(char *filename, char *output, char* sorting,int threads,int min,int di
     //display_tree(ptr);
   }else {
 
-    sdsl::stop_watch stopwatch;
     stopwatch.start();
     cerr<<"Creating tree: "<<endl;
 	
@@ -357,11 +356,10 @@ void print(uchar *a){
   cout<<"------------" <<endl;
 }
 
-void print_Sorted(uchar *a,uint * So){
-  int con=0;
-
+void print_Sorted(uchar *a,const uint * So){
+  
   for(uint i=0;i<K;i++){
-    con=0;
+    int con=0;
     while (startS[So[i]] + con  /*a[startS[So[i]]]*/< startS[So[i]+1])    /*a[startS[So[i]+1]]*/{
       putchar(decode(a,startS[So[i]]+con)   /*a[startS[So[i]]+con]*/);
       con++;
@@ -387,7 +385,7 @@ void displayhelp(){
 }
 
 
-void display_choices(char *filename, char *output, char* sorting,int threads,int min,int distribution_method){
+void display_choices(char *filename, const char *output, char* sorting,int threads,int min,int distribution_method){
 
   cerr<<"These are your choices:"<<endl;
   cerr<<"File name:"<<filename<<endl;
