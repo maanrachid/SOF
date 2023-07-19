@@ -78,7 +78,7 @@ that MAX_N determines the maximum length of N that SOF can handle. So
 if you test with large data sets, make sure that you increase this
 value.
 
-- Make sure that you DON’T run the program with output=1 when you k
+- Make sure that you DON'T run the program with output=1 when you k
 >10000 since a two dimensional array is required to store results (k2).
 
 - if you have any problem, please contact us:
