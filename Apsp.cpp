@@ -44,7 +44,6 @@ void APSP(char *filename, char *output, char* sorting,int threads,int min,int di
   uchar *text;
   std::ifstream::pos_type posSize;
   std::ifstream file ((char *)filename, std::ios::in|std::ios::binary|std::ios::ate);
-  ulong counter=0,bitnum=1,reminder=0,counterk=0,pos=0;
   // counterk is to count strings, counter to count the size of text (without the seperators), pos to get the current pos in final array.
   startS = new ulong[MAX_K];
   struct stack_node **matched = new stack_node*[MAX_K];    /* used for matched strings in the modified tree */
@@ -53,6 +52,7 @@ void APSP(char *filename, char *output, char* sorting,int threads,int min,int di
 
   if (file.is_open())
   {
+    ulong counter=0,bitnum=1,reminder=0,counterk=0,pos=0;
         posSize = file.tellg();
         ulong size = posSize;
         if (MAX_N != 0 && size > MAX_N)
@@ -208,6 +208,8 @@ int main(int argc,char *argv[])
   if (argc<2){
       cerr <<"wrong number of arguments, run Apsp to get a help"<<endl;
       displayhelp();
+      delete [] sorting;
+      delete [] output;
       return 0;
   }
   
@@ -252,7 +254,7 @@ void msd(uchar *a, int l, int r, int d, uint *So)
 
   //cerr << "l , r :"<<l<< " "<< r <<endl;
   if (r <= l+1) {
-    delete temp;
+    delete [] temp;
     return;
   }
 
