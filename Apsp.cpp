@@ -37,7 +37,6 @@ ulong *startS;
 void APSP(char *filename, char *output, char* sorting,int threads,int min,int distribution_method)
 {
     
-asdasdasd
 
   // N is the total length of the all strings. we have k strings.   
   uint *Sorted= new uint[MAX_K];
