@@ -6,7 +6,6 @@
 #include "testutils.hpp"
 #define SEPERATOR '\n'
 
-
 struct tree_node{
 	int pos;
 	int from;
