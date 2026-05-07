@@ -101,4 +101,3 @@ char choose_char(){
 char choose_terminator(){
 
   return '\n'; //counter+32;
-}
